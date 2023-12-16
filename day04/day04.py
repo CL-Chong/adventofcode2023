@@ -15,12 +15,12 @@ def process_line(s):
 
 
 def points(winnum_set, havenum_list):
-    count = sum([1 for x in havenum_list if x in winnum_set])
+    count = sum(1 for x in havenum_list if x in winnum_set)
     return (2**count) // 2
 
 
 def wins(winnum_set, havenum_list):
-    count = sum([1 for x in havenum_list if x in winnum_set])
+    count = sum(1 for x in havenum_list if x in winnum_set)
     return count
 
 
@@ -50,7 +50,7 @@ def day04b(filename):
         id_wins = wins(tup[1], tup[2])
         for c in range(current_id + 1, current_id + id_wins + 1):
             cfreq[c] += cfreq[current_id]
-    return sum([v for _, v in cfreq.items() if v != -math.inf])
+    return sum(v for _, v in cfreq.items() if v != -math.inf)
 
 
 print(day04("day04/test_input.txt"))
